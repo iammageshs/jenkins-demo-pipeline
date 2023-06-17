@@ -20,5 +20,7 @@ images:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args: ['run', 'deploy', 'demo-service', '--image', 'gcr.io/grafana-monitoring-demo/cloud-build-repo/demo', '--region', 'asia-south1']
+images:
+- gcr.io/grafana-monitoring-demo/cloud-build-repo/demo
 
 
