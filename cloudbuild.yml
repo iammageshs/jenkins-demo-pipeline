@@ -13,8 +13,5 @@ steps:
   args: ['build', '-t', 'gcr.io/grafana-monitoring-demo/demo:$COMMIT_SHA', '-f', 'Dockerfile', '.']
 images:
 - 'gcr.io/grafana-monitoring-demo/demo:$COMMIT_SHA'
-artifacts:
-  objects:
-    location: 'asia-south1'
-    paths: ['asia-south1-docker.pkg.dev/grafana-monitoring-demo/cloud-build-repo/']
+
 
