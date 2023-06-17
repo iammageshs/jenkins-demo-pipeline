@@ -17,4 +17,4 @@ artifacts:
   objects:
     location: 'asia-south1'
     paths: ['asia-south1-docker.pkg.dev/grafana-monitoring-demo/cloud-build-repo/']
-  target: 'gcr.io/grafana-monitoring-demo/cloud-build-repo'
+
