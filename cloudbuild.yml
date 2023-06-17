@@ -1,0 +1,8 @@
+steps:
+# Git checkout
+- name: 'gcr.io/cloud-builders/git'
+  args: ['checkout', 'main']
+
+# Maven build
+- name: 'maven:3.6.3-openjdk-11'
+  args: ['mvn', 'clean', 'install']
