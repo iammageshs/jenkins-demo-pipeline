@@ -10,6 +10,10 @@ steps:
 
 # Docker build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/grafana-monitoring-demo/onlinebookstore-0.0.1:$COMMIT_SHA', '-f', 'Dockerfile', '.']
+  args: ['build', '-t', 'gcr.io/grafana-monitoring-demo/demo:$COMMIT_SHA', '-f', 'Dockerfile', '.']
 images:
-- 'gcr.io/grafana-monitoring-demo/onlinebookstore-0.0.1:$COMMIT_SHA'
+- 'gcr.io/grafana-monitoring-demo/demo:$COMMIT_SHA'
+
+# Docker push to registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'asia-south1-docker.pkg.dev/grafana-monitoring-demo/cloud-build-repo/gcr.io/grafana-monitoring-demo/demo:$COMMIT_SHA']
