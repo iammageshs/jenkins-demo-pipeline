@@ -10,11 +10,11 @@ steps:
 
 # Docker build and push
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/grafana-monitoring-demo/demo:$COMMIT_SHA', '-f', 'Dockerfile', '.']
+  args: ['build', '-t', 'gcr.io/grafana-monitoring-demo/cloud-build-repo/demo:$COMMIT_SHA', '-f', 'Dockerfile', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/grafana-monitoring-demo/cloud-build-repo/demo:$COMMIT_SHA']
 images:
-- 'gcr.io/grafana-monitoring-demo/demo:$COMMIT_SHA'
+- 'gcr.io/grafana-monitoring-demo/cloud-build-repo/demo:$COMMIT_SHA'
 
 
 
