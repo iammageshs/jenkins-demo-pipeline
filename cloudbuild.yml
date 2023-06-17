@@ -12,4 +12,4 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/grafana-monitoring-demo/onlinebookstore-0.0.1:$COMMIT_SHA', '-f', 'Dockerfile', '.']
 images:
-- 'gcr.io/grafana-monitoring-demo/onlinebookstore-0.0.1$COMMIT_SHA'
+- 'gcr.io/grafana-monitoring-demo/onlinebookstore-0.0.1:$COMMIT_SHA'
