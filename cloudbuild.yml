@@ -6,4 +6,4 @@ steps:
 # Maven build
 - name: 'maven:3.8.1-openjdk-11'
   entrypoint: 'mvn'
-  args: ['clean', 'install'
+  args: ['clean', 'install']
