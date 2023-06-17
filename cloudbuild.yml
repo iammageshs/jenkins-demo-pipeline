@@ -4,5 +4,6 @@ steps:
   args: ['checkout', 'master']
 
 # Maven build
-- name: 'maven:3.6.3-openjdk-11'
-  args: ['mvn', 'clean', 'install']
+- name: 'maven:3.8.1-openjdk-11'
+  entrypoint: 'mvn'
+  args: ['clean', 'install'
