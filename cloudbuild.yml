@@ -1,12 +1,21 @@
 steps:
-# Git Checkout
+# Step to check out the source code from the repository
 - name: 'gcr.io/cloud-builders/git'
-  args: ['checkout', 'master']
+  args: ['clone', '--single-branch', '--branch', '${_BRANCH}', '--', 'https://github.com/your/repository.git', '.']
+  env:
+    - '_BRANCH=${BRANCH_NAME}'
 
-# Maven build
-- name: 'maven:3.8.1-openjdk-11'
+# Step to build the Maven project
+- name: 'maven:3.6.3-jdk-11-slim'
   entrypoint: 'mvn'
   args: ['clean', 'install']
+
+# Optional: define substitutions for triggering builds on different branches/tags
+substitutions:
+  _BRANCH: "master"
+
+  options:
+  logging: CLOUD_LOGGING_ONLY
 
 # Docker build and push
 - name: 'gcr.io/cloud-builders/docker'
