@@ -22,7 +22,7 @@ You can also run each sample directly from the command line.
 ```
      > java -jar target/SampleCode.jar [CodeSampleName]
 ```
-e.g.
+e.g..
 ```
      > java -jar target/SampleCode.jar ChargeCreditCard
 ```
