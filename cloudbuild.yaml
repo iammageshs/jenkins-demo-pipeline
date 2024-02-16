@@ -24,4 +24,4 @@ steps:
       - '--branch=main'
       - '--single-branch'
       - 'https://github.com/iammageshs/jenkins-demo-pipeline.git'
-      - 'repo'
+      - '/home/ubuntu'
