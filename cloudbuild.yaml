@@ -1,4 +1,11 @@
 steps:
-  # Step 1: Checkout the main branch from your Git repository
+  # Step to fetch code from Git repository
   - name: 'gcr.io/cloud-builders/git'
-    args: ['checkout', 'main']
+    args:
+      - 'clone'
+      - '--branch=main'
+      - '--single-branch'
+      - 'https://github.com/iammageshs/jenkins-demo-pipeline.git'
+      - 'repo'
+
+  # Add additional build steps here as needed
