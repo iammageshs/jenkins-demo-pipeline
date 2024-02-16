@@ -17,8 +17,8 @@ steps:
         # SSH into the Compute Engine instance
         gcloud compute ssh gcp-cicd --zone=asia-south1-a --ssh-key-file="$$SSH_KEY_FILE" --command="echo Logged into instance"
 
-        # Create a directory and git clone the repo
-        cd /home/ubuntu/cicd/ && git clone https://github.com/iammageshs/jenkins-demo-pipeline.git 
+        # Git clone the repo
+        cd /home/ubuntu/cicd && git clone https://github.com/iammageshs/jenkins-demo-pipeline.git 
 
 
 
