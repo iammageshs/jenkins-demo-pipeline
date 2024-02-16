@@ -1,11 +1,18 @@
 steps:
-  # Step to fetch code from Git repository
-  - name: 'gcr.io/cloud-builders/git'
+  # Step 1: Log in to GCP Compute Engine using SSH
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
     args:
-      - 'clone'
-      - '--branch=main'
-      - '--single-branch'
-      - 'https://github.com/iammageshs/jenkins-demo-pipeline.git'
-      - 'repo'
+      - '-c'
+      - |
+        # Set SSH key file path
+        SSH_KEY_FILE=$$HOME/.ssh/id_rsa
 
-  # Add additional build steps here as needed
+        # Decrypt SSH private key
+        openssl aes-256-cbc -d -a -in ssh_key.enc -out "$$SSH_KEY_FILE" -k "$$SSH_KEY_PASSWORD"
+
+        # Set correct permissions for SSH key
+        chmod 600 "$$SSH_KEY_FILE"
+
+        # SSH into the Compute Engine instance
+        gcloud compute ssh ci-cd --zone=asia-south1a --ssh-key-file="$$SSH_KEY_FILE" --command="echo Logged into instance"
