@@ -15,4 +15,4 @@ steps:
         chmod 600 "$$SSH_KEY_FILE"
 
         # SSH into the Compute Engine instance
-        gcloud compute ssh ci-cd --zone=asia-south1a --ssh-key-file="$$SSH_KEY_FILE" --command="echo Logged into instance"
+        gcloud compute ssh ci-cd --zone=asia-south1-a --ssh-key-file="$$SSH_KEY_FILE" --command="echo Logged into instance"
