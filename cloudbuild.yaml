@@ -17,6 +17,11 @@ steps:
         # SSH into the Compute Engine instance
         gcloud compute ssh gcp-cicd --zone=asia-south1-a --ssh-key-file="$$SSH_KEY_FILE" --command="echo Logged into instance"
 
-  # Step 2: Clone the main branch of the Git repository
+  # Step to fetch code from Git repository
   - name: 'gcr.io/cloud-builders/git'
-    args: ['clone', '-b', 'main', 'https://github.com/iammageshs/jenkins-demo-pipeline.git' '/home/ubuntu/cicd']
+    args:
+      - 'clone'
+      - '--branch=main'
+      - '--single-branch'
+      - 'https://github.com/iammageshs/jenkins-demo-pipeline.git'
+      - 'repo'
