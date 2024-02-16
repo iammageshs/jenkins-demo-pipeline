@@ -1,0 +1,4 @@
+steps:
+  # Step 1: Checkout the main branch from your Git repository
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['checkout', 'main']
